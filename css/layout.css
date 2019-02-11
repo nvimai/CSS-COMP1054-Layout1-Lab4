@@ -1,0 +1,125 @@
+@charset "UTF-8";
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+/* https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* STEP 5: Base typography */
+body {
+	font: 100%/1.4 Helvetica, Arial, sans-serif;
+	outline: 3px solid black;
+}
+
+/* STEP 6: Outline all elements to be arranged in layout */
+div#container {
+	outline: 3px dashed green;
+/* STEP 7: Set the width and the margins of the page container */
+	max-width: 900px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* STEP 10: Layer positioned elements with z-index */
+header {
+	outline: 3px dashed red;
+	background-color: lightblue;
+	/* position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20; */
+}
+
+/* 3. Adjust the margins of the H1 or the padding of the HEADER element to increase the amount of whitespace around the text. */
+header h1 {
+	margin: 50px 20px;
+}
+
+main {
+	outline: 3px dashed blue;
+	/* STEP 8e: Set a float to clear a float */
+	/* float: left; */
+}
+
+/* 4. Add a second SECTION element and place it in between the original SECTION element and the ASIDE element (essentially creating a 3rd column). */
+/* 5. Increase the space around the text inside both SECTION elements to give the text a bit more room to ‘breathe’, without causing the ASIDE element to bump down to the next row. */
+section {
+	outline: 3px dotted orange;
+	/* STEP 8a: Set the width of the <section> and the <aside> columns */
+	width: 300px;
+	padding: 0 20px 50px 20px;
+	/* STEP 8b: Float the 2 columns right and left */
+	float: right;
+	/* STEP 8c: Break the float, and experiment with border-box sizing at top of CSS file */
+
+	/* STEP 8f: Experiment with inline-block to arrange the 2 columns inside the <main> */
+	display: inline-block;
+}
+
+
+aside {
+	outline: 3px dashed hotpink;
+	/* STEP 8g: vertically align the <aside> column */
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+	/* float: right; */
+	padding: 0 10px;
+}
+
+footer {
+	outline: 3px dotted limegreen;
+	/* STEP 8d: Clear the footer, noticing that the <main> element is collapsed */
+	/* clear: both; */
+
+	/* 6. Set the FOOTER element to sit fixed at the bottom of the page with a black or dark transparent background. */
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+	display: inline-flex;
+	width: 100%;
+	padding: 0 10px;
+}
+/* STEP 9: Absolute and fixed positioning */
+p.social {
+	font-family: socialicoregular;
+	font-size: 40px;
+	width: 250px;
+	text-align: center;
+	float: right;
+	margin: 0;
+	/* 
+	height: 100px;
+	padding: 10px;
+	position: absolute;
+	color: white;
+	background-color: rgba(0,0,0,0.7);
+	top:0;
+	left:0;
+	z-index: 30; */
+}
+
+/* 7. Add a media query to the CSS that has the two SECTION elements and the ASIDE element arranged in a single column for smartphone screen widths. */
+
+@media only screen and (max-width: 480px) {
+	section {
+		display: block;
+		margin: 0 auto;
+		float: unset;
+	}
+	aside {
+		display: block;
+		margin: 0 auto;
+	}
+	footer {
+		font-size: 12px;
+		position: unset;
+	}
+}
