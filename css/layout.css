@@ -51,7 +51,7 @@ main {
 section {
 	outline: 3px dotted orange;
 	/* STEP 8a: Set the width of the <section> and the <aside> columns */
-	width: 300px;
+	width: 240px;
 	padding: 0 20px 50px 20px;
 	/* STEP 8b: Float the 2 columns right and left */
 	float: right;
@@ -67,7 +67,7 @@ aside {
 	/* STEP 8g: vertically align the <aside> column */
 	display: inline-block;
 	vertical-align: top;
-	width: 300px;
+	width: 240px;
 	/* float: right; */
 	padding: 0 10px;
 }
@@ -122,4 +122,10 @@ p.social {
 		font-size: 12px;
 		position: unset;
 	}
+}
+
+main nav {
+	outline: 3px dotted purple;
+	float: left;
+	width: 180px;
 }
